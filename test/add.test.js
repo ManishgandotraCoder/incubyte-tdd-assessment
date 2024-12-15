@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import add from "./add.js";
+import add from "../add.js";
 
 describe("String Calculator", () => {
   it("should return 0 for an empty string", () => {
@@ -17,15 +17,19 @@ describe("String Calculator", () => {
   it("should return the sum for multiple numbers", () => {
     expect(add("1,2,3")).to.equal(6);
   });
+
   it("should handle new lines as delimiters", () => {
     expect(add("1\n2,3")).to.equal(6);
   });
+
   it("should handle custom delimiters", () => {
     expect(add("//;\n1;2")).to.equal(3);
   });
+
   it("should throw an error for negative numbers", () => {
     expect(() => add("1,-2")).to.throw("negative numbers not allowed -2");
   });
+
   it("should handle custom delimiter with new lines", () => {
     expect(add("//|\n1|2|3")).to.equal(6);
   });
