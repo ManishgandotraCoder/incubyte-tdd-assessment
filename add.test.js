@@ -20,4 +20,7 @@ describe("String Calculator", () => {
   it("should handle new lines as delimiters", () => {
     expect(add("1\n2,3")).to.equal(6);
   });
+  it("should handle custom delimiters", () => {
+    expect(add("//;\n1;2")).to.equal(3);
+  });
 });
